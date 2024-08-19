@@ -5,7 +5,8 @@
 - npm6.14.16
 - composer create-project --prefer-dist laravel/laravel blog "5.8.*"
 - php -d memory_limit=-1 C:\composer\composer.phar install(si en caso no hay memoria para instalar composer)
-
+- npm install
+- npm install vue@2
 
 ## About Laravel
 
