@@ -1,8 +1,3 @@
-## INSTALACION PARA LARAVEL 5.8
- composer1.6.5
- php7.2.34
- npm6.14.16
- php -d memory_limit=-1 C:\composer\composer.phar install(si en caso no hay memoria para instalar composer)
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
@@ -14,6 +9,12 @@
 </p>
 
 ## About Laravel
+## INSTALACION PARA LARAVEL 5.8
+ composer1.6.5
+ php7.2.34
+ npm6.14.16
+ php -d memory_limit=-1 C:\composer\composer.phar install(si en caso no hay memoria para instalar composer)
+
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
