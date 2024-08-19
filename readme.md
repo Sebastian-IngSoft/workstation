@@ -1,7 +1,9 @@
 ## INSTALACION PARA LARAVEL 5.8
-- composer1.6.5
-- php7.2.34
+- WampServer
+- composer1.6.5 (https://youtu.be/faUToSxUfUg?si=KzKTy6KsHnTrp2xM)
+- php7.2.34 (addon de WampServer)
 - npm6.14.16
+- composer create-project --prefer-dist laravel/laravel blog "5.8.*"
 - php -d memory_limit=-1 C:\composer\composer.phar install(si en caso no hay memoria para instalar composer)
 
 
