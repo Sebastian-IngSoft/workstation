@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Sales</b>System',
 
     'logo_mini' => '<b>A</b>LT',
 
@@ -132,80 +132,54 @@ return [
             'text' => 'search',
             'search' => true,
         ],
-        ['header' => 'main_navigation'],
+        ['header' => 'Operations'],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text'        => 'Products',
+            'icon'        => 'fa fa-shopping-basket',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Customers',
+            'icon' => 'fa fa-users',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text' => 'Sales',
+            'icon' => 'fa fa-shopping-cart',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Make Sale',
                     'url'  => '#',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Tickets',
+                    'url'  => '#',
                 ],
                 [
-                    'text' => 'level_one',
+                    'text' => 'Debts',
                     'url'  => '#',
                 ],
             ],
         ],
-        ['header' => 'labels'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
+            'text' => 'Wallet',
+            'icon' => 'fa fa-wallet',
+        ],
+        ['header' => 'Settings'],
+        [
+            'text'=>'Profile',
+            'icon'=>'fa fa-user',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
+            'text' => 'New User',
+            'icon' => 'fa fa-user-plus',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
+            'text' => 'Users list',
+            'icon' => 'fa fa-users',
         ],
     ],
 
@@ -246,6 +220,7 @@ return [
     */
 
     'plugins' => [
+        
         [
             'name' => 'Datatables',
             'active' => true,
@@ -302,7 +277,7 @@ return [
         ],
         [
             'name' => 'Pace',
-            'active' => true,
+            'active' => false, // Set it to true to enable loading icon
             'files' => [
                 [
                     'type' => 'css',
