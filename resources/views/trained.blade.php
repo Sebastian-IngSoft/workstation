@@ -8,12 +8,13 @@
 
 @section('content')
     <div id="app">
-        
+        <trained-component></trained-component>
     </div>
 @endsection
 
 @section('css')
-    <!-- No incluir el CSS generado por Laravel Mix para evitar conflictos con AdminLTE -->
+<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
 @endsection
 
 @section('js')
