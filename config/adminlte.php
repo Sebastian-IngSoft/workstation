@@ -134,12 +134,12 @@ return [
         ],
         ['header' => 'Operations'],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Trained',
+            'route'  => 'trained.index',
         ],
         [
             'text'        => 'Products',
+            'route'       => 'products.index',
             'icon'        => 'fa fa-shopping-basket',
         ],
         [

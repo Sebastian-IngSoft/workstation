@@ -11,7 +11,11 @@ Vue.use(Antd);
 
 // Registrar componentes Vue
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+import AntDesignComponents from './components/AntDesignComponents.vue';
+//registrar table-component
+import TableComponent from './components/TableComponent.vue';
 
 const app = new Vue({
     el: '#app',
+    components: { AntDesignComponents, TableComponent }
 });

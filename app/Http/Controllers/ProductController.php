@@ -14,9 +14,18 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all(); // Obtén los datos de los productos desde la base de datos
+        $headers = [
+            ['title' => 'ID', 'dataIndex' => 'id', 'key' => 'id'],
+            ['title' => 'Nombre', 'dataIndex' => 'name', 'key' => 'name'],
+            ['title' => 'Descripcion', 'dataIndex' => 'description', 'key' => 'description'],
+            ['title' => 'Stock', 'dataIndex' => 'stock', 'key' => 'stock'],
+            ['title' => 'Compra', 'dataIndex' => 'purchase', 'key' => 'purchase'],
+            ['title' => 'Venta', 'dataIndex' => 'sell', 'key' => 'sell'],
+            // Agrega más columnas según tus necesidades
+        ];
+        return view('products.index', compact('products', 'headers'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
