@@ -1,9 +1,10 @@
 <script setup>
-    import { ref } from 'vue';
+    import { ref , computed } from 'vue';
 //v-bind para usar variables de javascript en el template
     const message = 'Vue dinamico 3';
     const arraynumeros = ['red', 'blue', 3, 4, 5];
     const activo = ref(true);
+    const count = ref(0);
     const arrayFrutas = [
     {
         name: "Manzana",
@@ -54,6 +55,43 @@
         activo.value = !activo.value;
         console.log('test'+ activo);
     };
+    const aumentar = () => {
+        count.value++;
+    };
+    const disminuir = () => {
+        count.value--;
+    };
+    const reset = () => {
+        count.value = 0;
+    };
+    const numeros=ref([]) 
+
+    const classComputed = computed(() => {
+        if (count.value < 0) {
+
+            return 'red';
+        } else if (count.value > 0) {
+
+            return 'green';
+        }
+        else {
+            return 'black';
+        }
+    });
+    const add = (x) => {
+        numeros.value.push(x);
+        
+        
+    };
+    const disabled = computed(() => {
+        if (numeros.value.includes(count.value)) {
+            console.log(count);
+            console.log(count.value);
+            return true;
+        } else {
+            return false;
+        }
+    });
     
 </script>
 <template>
@@ -84,5 +122,16 @@
         </template>
 
         <button @click="activar">activar</button>
+        //si el count es menor a cero style color es rojo si es mayor a cero es verde
+        <p :style="'color : '+ classComputed">{{ count }}</p>
+        <button @click="aumentar">aumentar</button>
+        <button @click="disminuir">disminuir</button>
+        <button @click="reset">reset</button>
+
+        <!--Practicando todo-->
+        <button :disabled="disabled" @click="add(count)">add</button>
+        <ul>
+            <li v-for="numero in numeros">{{ numero }}</li>
+        </ul>
     </div>
 </template>
