@@ -15,8 +15,14 @@ import AntDesignComponents from './components/AntDesignComponents.vue';
 //registrar table-component
 import TableComponent from './components/TableComponent.vue';
 import TrainedComponent from './components/TrainedComponent.vue';
+import CrudComponent from './components/CrudComponent.vue';
 
 const app = new Vue({
     el: '#app',
-    components: { AntDesignComponents, TableComponent , TrainedComponent }
+    components: { 
+        AntDesignComponents, 
+        TableComponent, 
+        TrainedComponent, 
+        CrudComponent 
+    }
 });

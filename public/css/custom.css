@@ -10,7 +10,6 @@
 /* Fijar el menú izquierdo */
 .main-sidebar {
     position: fixed !important;
-    top: 50px !important;
     bottom: 0 !important;
     overflow-y: auto !important;
     z-index: 1020 !important;

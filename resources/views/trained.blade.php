@@ -8,7 +8,11 @@
 
 @section('content')
     <div id="app">
-        <trained-component></trained-component>
+        <crud-component></crud-component>
+        <br>
+        <div class="container">
+            <trained-component></trained-component>
+        </div>
     </div>
 @endsection
 
