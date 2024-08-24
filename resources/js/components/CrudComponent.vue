@@ -35,7 +35,7 @@ export default {
     },
     eliminarTarea(index) {
       this.tareas.splice(index, 1);
-      console.log(`Quedan ${this.tareas.length} tareas.`);
+      console.log(`Quedan ${this.tareas.length} tareas.`)
     }
   },
 };
