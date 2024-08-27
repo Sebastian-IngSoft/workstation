@@ -12,7 +12,6 @@
 @endsection
 
 @section('css')
-    <!-- No incluir el CSS generado por Laravel Mix para evitar conflictos con AdminLTE -->
 @endsection
 
 @section('js')

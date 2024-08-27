@@ -27,5 +27,9 @@ Route::view('trained/index', 'trained')->name('trained.index');
 // Agrupar rutas con middleware 'auth'
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('products', 'ProductController');
+
+    //rutas de sales
+    Route::get('sales/make', 'SaleController@make')->name('sales.make');
+    Route::resource('sales', 'SaleController')->only(['store']);
 });
 

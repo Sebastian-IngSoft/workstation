@@ -16,6 +16,8 @@ const TableComponent = () => import('./components/TableComponent.vue');
 const TrainedComponent = () => import('./components/TrainedComponent.vue');
 const CrudComponent = () => import('./components/CrudComponent.vue');
 const BtnModalComponent = () => import('./components/BtnModalComponent.vue');
+const SelectComponent = () => import('./components/SelectComponent.vue');
+const ProductsSaleComponent = () => import('./components/ProductsSaleComponent.vue');
 
 const app = new Vue({
     el: '#app',
@@ -24,6 +26,8 @@ const app = new Vue({
         TableComponent, 
         TrainedComponent, 
         CrudComponent,
-        BtnModalComponent 
+        BtnModalComponent,
+        SelectComponent,
+        ProductsSaleComponent,
     }
 });
