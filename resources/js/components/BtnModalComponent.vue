@@ -1,12 +1,12 @@
 <template>
     <div>
-        <button type="button" :class="cls" data-toggle="modal" :data-target="`#exampleModal${id}`">
+        <button type="button" :class="cls" data-toggle="modal" :data-target="`#${id}`">
             <i v-if="icon" :class="icon" aria-hidden="true"></i>
             <p v-else>{{ text }}</p>
         </button>
 
         <!-- Modal -->
-        <div class="modal fade" :id="`exampleModal${id}`" tabindex="-1" role="dialog"
+        <div class="modal fade" :id="id" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -17,7 +17,7 @@
                         <div class="modal-body">
                             <slot name="body">
                                 slot__body
-                                <template v-if="!id">
+                                <template v-if="!formModal">
                                     <br>
                                     id__ para enlazar el boton con el modal mediante el id de la propiedad
                                     <br>
@@ -44,7 +44,7 @@ export default {
     name: "BtnModalComponent",
     props: {
         id: {
-            type: Number,
+            type: String,
             required: true,
         },
         cls: {

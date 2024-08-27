@@ -20,3 +20,18 @@
     margin-top: 50px !important;
     margin-left: 230px !important;
 }
+
+/* Asegurarse de que los botones dentro de .d-flex se muestren en fila */
+.d-flex{
+    display: flex !important;
+
+}
+.flex-row {
+    flex-direction: row !important;
+    gap: 2px; /* Espacio entre los botones, ajusta según sea necesario */
+}
+/* Estilo personalizado para centrar elementos con flexbox */
+.flex-center {
+    justify-content: center !important;
+    align-items: center !important;
+}
