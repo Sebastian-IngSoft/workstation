@@ -66,16 +66,16 @@
                                     @csrf
                                     @method('PUT')
                                     <label for="">Name</label>
-                                    <input name="name" class="form-control" value="{{ $product->name }}"></input>
+                                    <input name="name" class="form-control" value="{{ $product->name }}"/>
                                     <label for="">Description</label>
                                     <input name="description" class="form-control"
-                                        value="{{ $product->description }}"></input>
+                                        value="{{ $product->description }}"/>
                                     <label for="">Stock</label>
-                                    <input name="stock" class="form-control" value="{{ $product->stock }}"></input>
+                                    <input name="stock" class="form-control" value="{{ $product->stock }}"/>
                                     <label for="">Purchase</label>
-                                    <input name="purchase" class="form-control" value="{{ $product->purchase }}"></input>
+                                    <input name="purchase" class="form-control" value="{{ $product->purchase }}"/>
                                     <label for="">Sell</label>
-                                    <input name="sell" class="form-control" value="{{ $product->sell }}"></input>
+                                    <input name="sell" class="form-control" value="{{ $product->sell }}"/>
                                 </template>
                             </btn-modal-component>
                             <btn-modal-component id="{{ 'delete' . $product->id }}" cls="btn btn-danger"
