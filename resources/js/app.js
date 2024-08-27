@@ -11,11 +11,11 @@ Vue.use(Antd);
 
 // Registrar componentes Vue
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-import AntDesignComponents from './components/AntDesignComponents.vue';
-//registrar table-component
-import TableComponent from './components/TableComponent.vue';
-import TrainedComponent from './components/TrainedComponent.vue';
-import CrudComponent from './components/CrudComponent.vue';
+const AntDesignComponents = () => import('./components/AntDesignComponents.vue');
+const TableComponent = () => import('./components/TableComponent.vue');
+const TrainedComponent = () => import('./components/TrainedComponent.vue');
+const CrudComponent = () => import('./components/CrudComponent.vue');
+const BtnModalComponent = () => import('./components/BtnModalComponent.vue');
 
 const app = new Vue({
     el: '#app',
@@ -23,6 +23,7 @@ const app = new Vue({
         AntDesignComponents, 
         TableComponent, 
         TrainedComponent, 
-        CrudComponent 
+        CrudComponent,
+        BtnModalComponent 
     }
 });

@@ -14,17 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all(); // Obtén los datos de los productos desde la base de datos
-        $headers = [
-            ['title' => 'ID', 'dataIndex' => 'id', 'key' => 'id'],
-            ['title' => 'Nombre', 'dataIndex' => 'name', 'key' => 'name'],
-            ['title' => 'Descripcion', 'dataIndex' => 'description', 'key' => 'description'],
-            ['title' => 'Stock', 'dataIndex' => 'stock', 'key' => 'stock'],
-            ['title' => 'Compra', 'dataIndex' => 'purchase', 'key' => 'purchase'],
-            ['title' => 'Venta', 'dataIndex' => 'sell', 'key' => 'sell'],
-            // Agrega más columnas según tus necesidades
-        ];
-        return view('products.index', compact('products', 'headers'));
+        // Obtener todos los productos de la base de datos
+        $products = Product::paginate(10);
+        return view('products.index', compact('products'));
     }
     /**
      * Show the form for creating a new resource.
@@ -64,9 +56,8 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Product $product, Request $request)
     {
-        //
     }
 
     /**
@@ -78,7 +69,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->all());
+        return redirect()->route('products.index');
     }
 
     /**

@@ -6,7 +6,7 @@
       <a-button type="primary" @click="agregarTarea">Primary Button</a-button>
       <div v-for="tarea,index in tareas" :key="tarea.id" class="d-flex flex-row bd-highlight mb-3">
         <a-alert :message="tarea.nombre + ' ' + tarea.estado" type="success" style="width: 50%;"></a-alert>
-        <button class="btn btn-success" @click="switchTarea(index)">Switch</button>
+        <button :class="color" @click="switchTarea(index)">Switch</button>
         <button class="btn btn-danger" @click="eliminarTarea(index)">Eliminar</button>
 
       </div>
@@ -37,6 +37,15 @@ export default {
       this.tareas.splice(index, 1);
       console.log(`Quedan ${this.tareas.length} tareas.`)
     }
+  },
+  computed: {
+    color() {
+      return {
+        'btn btn-success': this.tareas.length <= 3,
+        'btn btn-warning': this.tareas.length > 3 && this.tareas.length <= 6,
+        'btn btn-danger': this.tareas.length > 6,
+      }
+    },
   },
 };
 </script>
