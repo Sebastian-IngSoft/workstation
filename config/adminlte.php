@@ -156,7 +156,7 @@ return [
                 ],
                 [
                     'text' => 'Tickets',
-                    'url'  => '#',
+                    'route'  => 'tickets.index',
                 ],
                 [
                     'text' => 'Debts',

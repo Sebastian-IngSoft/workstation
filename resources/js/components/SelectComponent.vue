@@ -19,7 +19,7 @@ export default {
         },
         name: {
             type: String,
-            default: 'customer_id'
+            default: 'table_id'
         }
     },
     data() {

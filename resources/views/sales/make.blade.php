@@ -8,11 +8,12 @@
 
 @section('content')
     <div id="app" class="container">
-        <form action="{{route('sales.store')}}" method="POST">
+        <form action="{{ route('sales.store') }}" method="POST">
             @csrf
             <label for="">Select Customer</label>
             <select-component :content="{{ json_encode($customers) }}" name="customer_id"></select-component>
-            <products-sale-component :products="{{json_encode($products)}}" name="product_id"></products-sale-component>
+            <products-sale-component :products="{{ json_encode($products) }}" name="product_id" ></products-sale-component>
+            <button type="submit" class="btn btn-primary">Make Sale</button>
         </form>
     </div>
 @endsection
