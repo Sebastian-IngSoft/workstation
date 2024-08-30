@@ -1,38 +1,44 @@
 <template>
-  <a-table :columns="columns" :dataSource="dataSource" :rowKey="record => record.id">
-    <template #bodyCell="{ column, record }">
-      <template v-if="column.key === 'action'">
-        <a-button @click="handleEdit(record)">Edit</a-button>
-        <a-button @click="handleDelete(record)">Delete</a-button>
-      </template>
-      <template v-else>
-        {{ record[column.dataIndex] }}
-      </template>
-    </template>
+  <a-table :columns="columns" :dataSource="dataSource" rowKey="key">
   </a-table>
 </template>
 
 <script>
 export default {
-  props: {
-    dataSource: {
-      type: Array,
-      required: true
-    },
-    columns: {
-      type: Array,
-      required: true
-    }
+  data() {
+    return {
+      columns: [
+        {
+          title: 'Header 1',
+          dataIndex: 'header1',
+          key: 'header1',
+        },
+        {
+          title: 'Header 2',
+          dataIndex: 'header2',
+          key: 'header2',
+        },
+        {
+          title: 'Action',
+          dataIndex: 'action',
+          key: 'action',
+        },
+      ],
+      dataSource: [
+        {
+          key: '1',
+          header1: 'Data 1',
+          header2: 'Data 2',
+          title: 'Action Title 1',
+        },
+        {
+          key: '2',
+          header1: 'Data 3',
+          header2: 'Data 4',
+          title: 'Action Title 2',
+        },
+      ],
+    };
   },
-  methods: {
-    handleEdit(record) {
-      // Lógica para editar el producto
-      console.log('Editando producto:', record);
-    },
-    handleDelete(record) {
-      // Lógica para eliminar el producto
-      console.log('Eliminando producto:', record);
-    }
-  }
 };
 </script>

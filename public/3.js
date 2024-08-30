@@ -10,25 +10,33 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    dataSource: {
-      type: Array,
-      required: true
-    },
-    columns: {
-      type: Array,
-      required: true
-    }
-  },
-  methods: {
-    handleEdit: function handleEdit(record) {
-      // Lógica para editar el producto
-      console.log('Editando producto:', record);
-    },
-    handleDelete: function handleDelete(record) {
-      // Lógica para eliminar el producto
-      console.log('Eliminando producto:', record);
-    }
+  data: function data() {
+    return {
+      columns: [{
+        title: 'Header 1',
+        dataIndex: 'header1',
+        key: 'header1'
+      }, {
+        title: 'Header 2',
+        dataIndex: 'header2',
+        key: 'header2'
+      }, {
+        title: 'Action',
+        dataIndex: 'action',
+        key: 'action'
+      }],
+      dataSource: [{
+        key: '1',
+        header1: 'Data 1',
+        header2: 'Data 2',
+        title: 'Action Title 1'
+      }, {
+        key: '2',
+        header1: 'Data 3',
+        header2: 'Data 4',
+        title: 'Action Title 2'
+      }]
+    };
   }
 });
 
@@ -52,30 +60,8 @@ var render = function render() {
     attrs: {
       columns: _vm.columns,
       dataSource: _vm.dataSource,
-      rowKey: function rowKey(record) {
-        return record.id;
-      }
-    },
-    scopedSlots: _vm._u([{
-      key: "bodyCell",
-      fn: function fn(_ref) {
-        var column = _ref.column,
-          record = _ref.record;
-        return [column.key === "action" ? [_c("a-button", {
-          on: {
-            click: function click($event) {
-              return _vm.handleEdit(record);
-            }
-          }
-        }, [_vm._v("Edit")]), _vm._v(" "), _c("a-button", {
-          on: {
-            click: function click($event) {
-              return _vm.handleDelete(record);
-            }
-          }
-        }, [_vm._v("Delete")])] : [_vm._v("\n      " + _vm._s(record[column.dataIndex]) + "\n    ")]];
-      }
-    }])
+      rowKey: "key"
+    }
   });
 };
 var staticRenderFns = [];

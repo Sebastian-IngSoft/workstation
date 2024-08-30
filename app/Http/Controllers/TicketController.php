@@ -14,7 +14,8 @@ class TicketController extends Controller
      */
     public function index()
     {
-        //
+        $tickets = Ticket::orderby('id','desc')->paginate();
+        return view('tickets.index', compact('tickets'));
     }
 
     /**
