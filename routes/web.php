@@ -27,5 +27,6 @@ Route::view('trained/index', 'trained')->name('trained.index');
 // Agrupar rutas con middleware 'auth'
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('products', 'ProductController');
+    Route::resource('customers', 'CustomerController');
 });
 

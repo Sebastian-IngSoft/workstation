@@ -145,6 +145,7 @@ return [
         [
             'text' => 'Customers',
             'icon' => 'fa fa-users',
+            'route'  => 'customers.index',
         ],
         [
             'text' => 'Sales',
