@@ -153,11 +153,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Make Sale',
-                    'url'  => '#',
+                    'route'  => 'sales.make',
                 ],
                 [
                     'text' => 'Tickets',
-                    'url'  => '#',
+                    'route'  => 'tickets.index',
                 ],
                 [
                     'text' => 'Debts',

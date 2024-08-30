@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
+use App\Product;
 use App\Sale;
+use App\Ticket;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -22,9 +25,12 @@ class SaleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function make()
     {
-        //
+        //SOLO QUIERO TENER LA COLUMNA NAME Y EL ID
+        $customers = Customer::select('id', 'name')->orderby('name','asc')->get();
+        $products = Product::orderby('name','asc')->get();
+        return view('sales.make', compact('customers', 'products'));
     }
 
     /**
@@ -35,7 +41,23 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $productTotal=0;
+        for ( $i=0; $i < count($request['product_id']) ; $i++) {
+            $productTotal  += (((Product::select('sell')->where('id',  $request['product_id'][$i])->first())->sell) * ($request['quantity'][$i]));
+        }
+        $ticket = Ticket::create([
+            'customer_id' => $request['customer_id'],
+            'user_id' => auth()->user()->id,
+            'price' => $productTotal,
+        ]);
+        for ($i=0; $i < count($request['product_id']) ; $i++) { 
+            Sale::create([
+                'product_id' => $request['product_id'][$i],
+                'amount' => $request['quantity'][$i],
+                'ticket_id' => $ticket->id,
+            ]);
+        }
+        return redirect()->route('sales.make')->with('info', 'Venta guardada con éxito');
     }
 
     /**
