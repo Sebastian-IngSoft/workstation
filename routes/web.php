@@ -33,5 +33,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('sales/make', 'SaleController@make')->name('sales.make');
     Route::resource('sales', 'SaleController')->only(['store']);
     Route::resource('tickets', 'TicketController')->only(['index', 'show']);
+    Route::resource('tickets', 'TicketController')->only('index', 'show');
 });
 

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Tickets')
+@section('title', 'Products')
 
 @section('content_header')
     <h1>Tickets</h1>
@@ -8,36 +8,7 @@
 
 @section('content')
     <div id="app">
-        <table class="ant-table">
-            <thead>
-                <tr>
-                    <th>test</th>
-                    <th>test</th>
-                    <th>test</th>
-                    <th>test</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                </tr>
-            </tbody>
-        </table>
+        <table-component></table-component>
     </div>
 @endsection
 
